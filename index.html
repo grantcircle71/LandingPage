@@ -424,7 +424,15 @@
 
         // --- FIREBASE INITIALIZATION AND AUTHENTICATION ---
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-circle71-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const firebaseConfig = {
+          apiKey: "AIzaSyAyRDFas9B8YLAx2XawHWHZvgf2oSezGIA",
+          authDomain: "circle71-3855a.firebaseapp.com",
+          projectId: "circle71-3855a",
+          storageBucket: "circle71-3855a.firebasestorage.app",
+          messagingSenderId: "701220808447",
+          appId: "1:701220808447:web:ea7e03d13edbc19cee8eca",
+          measurementId: "G-2FXN8GF6JZ"
+        };
         const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
         let db;
