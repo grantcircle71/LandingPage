@@ -509,16 +509,17 @@
                 // Add document to Firestore
                 const docRef = await addDoc(collection(db, SUB_COLLECTION_PATH), subscriptionData);
 
-                // Show success message
-                form.style.display = 'none';
-                document.querySelector('.email-subtext')?.style.display = 'none'; // Use optional chaining in case .email-subtext isn't found
+                // Replace the form with the success message (show submitted email)
+                successMessage.textContent = `Welcome to Circle 71. Your access has been reserved — ${email}`;
+                form.replaceWith(successMessage);
                 successMessage.style.display = 'block';
+
                 console.log('Email successfully subscribed and saved to Firestore. Document ID:', docRef.id);
                 console.log('Saved to path:', SUB_COLLECTION_PATH);
             
             } catch (error) {
                 console.error("Error writing document to Firestore:", error);
-                errorMessage.textContent = "Subscription failed due to a server error. Check the console for details.";
+                errorMessage.textContent = "Subscription failed due to a server error. Please try again.";
                 errorMessage.style.display = 'block';
             }
         });
