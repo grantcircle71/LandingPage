@@ -495,7 +495,8 @@
             const email = emailInput.value;
             // Note: The userId might be the signed-in user's UID or a randomly generated UUID if anonymous sign-in failed.
             const currentUserId = auth.currentUser?.uid || userId;
-            const SUB_COLLECTION_PATH = `/artifacts/${appId}/users/${currentUserId}/subscriptions`;
+            const SUB_COLLECTION_PATH = 'emails';
+
 
             try {
                 // Prepare the document data
