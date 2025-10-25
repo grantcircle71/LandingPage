@@ -272,12 +272,7 @@
         /* END NEW STYLES */
 
         .footer-logo {
-            /* REMOVED: Text-specific styling */
-            /* font-size: 2rem; */
-            /* font-weight: 200; */
-            /* letter-spacing: 8px; */
-            /* color: rgba(245, 242, 235, 0.4); */
-            margin-bottom: 10px;
+            margin-bottom: 0px; /* change this value to increase/decrease spacing */
         }
         
         /* NEW: Image styling for the footer logo */
@@ -369,28 +364,27 @@
 
     <section class="products" id="products">
         <div class="products-container">
-            <!-- Product Card 1: Simplified (No Image) --><div class="product-card">
-                <h3 class="product-name">THE APEX POLO</h3>
-                <p class="product-tagline">Coming Soon</p>
+            <!-- Product Card 1: Simplified (No Image) --><div class="product-card" style="background: #212C65;">
+              <h3 class="product-name" style="color: #F5F2EB;">THE APEX POLO</h3>
+              <p class="product-tagline" style="color: #F5F2EB;">Coming Soon</p>
             </div>
-            <!-- Product Card 2: Simplified (No Image) --><div class="product-card">
-                <h3 class="product-name">THE ORGIN CAP</h3>
-                <p class="product-tagline">Coming Soon</p>
+            <!-- Product Card 2: Simplified (No Image) --><div class="product-card" style="background: #212C65;">
+              <h3 class="product-name" style="color: #F5F2EB;">THE ORGIN CAP</h3>
+              <p class="product-tagline" style="color: #F5F2EB;">Coming Soon</p>
             </div>
             <!-- Add more mock products as needed --></div>
     </section>
 
     <footer>
         <div class="footer-container">
-            <!-- UPDATED: Replaced text with image logo and added error fallback -->
             <div class="footer-logo">
-                <img 
-                    src="logo.png" 
-                    alt="Circle 71 Logo Mark"
-                    onerror="this.src='https://placehold.co/50x50/1a1a1a/F5F2EB?text=71&font=helvetica';"
-                >
+              <img 
+                  src="logo.png" 
+                  alt="Circle 71 Logo Mark"
+                  onerror="this.src='https://placehold.co/50x50/1a1a1a/F5F2EB?text=71&font=helvetica';"
+              >
             </div>
-            <p class="tagline-footer" style="font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Play Pure</p>
+            <p class="tagline" style="font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; margin-top: 0; margin-bottom: 0;">Play Pure</p>
             <div class="social-links">
                 <!-- TikTok SVG --><a href="https://www.tiktok.com/@Circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
