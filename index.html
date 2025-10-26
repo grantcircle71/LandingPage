@@ -39,6 +39,7 @@
             margin: 0 auto 20px;
             display: block;
             line-height: 1.4;
+            font-family: 'Urbanist', sans-serif;
         }
 
         .hero-content {
@@ -131,7 +132,6 @@
         }
 
         /* --- SVG Line Styles --- */
-        /* Removed .mountain-line styles as SVG is gone */
 
         /* Product Showcase */
         .products {
@@ -329,204 +329,242 @@
     </style>
 </head>
 <body>
-    <section class="hero">
-        
-        <div class="hero-content">
-            <div class="logo-container">
-          <div class="logo-mark">
-              <img 
-                src="logo.png" 
-                alt="Circle 71 Logo Mark"
-                style="position:absolute; top:30%; left:50%; transform:translate(-50%,-50%); width:35vw; height:auto; max-width:420px; min-width:90px; display:block;"
-                onerror="this.src='https://placehold.co/120x120/212C65/F5F2EB?text=71&font=helvetica';"
-              />
-          </div>
-          <h1 class="logo" style="margin-top:40px; font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;">CIRCLE 71</h1>
-            </div>
-            <p class="tagline" style="font-size: 1.62rem;">Born in Jackson Hole, refined performance apparel where precision and purpose align — for those who never lay-up.</p>
-                <div class="hero-email-wrapper">
-                  
-                  <form class="email-form" id="emailForm">
-                    <input 
-                      type="email" 
-                      class="email-input" 
-                      placeholder="Your email address" 
-                        required
-                        id="emailInput"
-                    >
-                    <button type="submit" class="submit-btn">Join the Circle</button>
-                </form>
-                <div class="success-message" id="successMessage">
-                    Welcome to the Circle!. You're on the list 
-                </div>
-                <div class="error-message" id="errorMessage">
-                    An error occurred. Please try again.
-                </div>
-            </div>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="logo-container">
+        <div class="logo-mark">
+          <img 
+            src="logo.png" 
+            alt="Circle 71 Logo Mark"
+            style="position:absolute; top:30%; left:50%; transform:translate(-50%,-50%); width:35vw; height:auto; max-width:420px; min-width:90px; display:block;"
+            onerror="this.src='https://placehold.co/120x120/212C65/F5F2EB?text=71&font=helvetica';"
+          />
         </div>
-    </section>
-
-    <section class="brand-statement">
-        <div class="statement-container">
-            <p class="statement-text">Circle 71 was founded on a belief that true performance is quiet, intentional, and enduring. Each piece reflects the precision of modern engineering and the calm of mountain air — a new standard of refined performance.</p>
+        <h1 class="logo" 
+          id="circle71Logo"
+          style="font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+          CIRCLE 71
+        </h1>
+      </div>
+      <p class="tagline" style="font-size: 1.62rem;">Born in Jackson Hole, refined performance apparel — for those who never lay-up.</p>
+      <div class="hero-email-wrapper">
+        <form class="email-form" id="emailForm">
+          <input 
+            type="email" 
+            class="email-input" 
+            placeholder="Your email address" 
+            required
+            id="emailInput"
+          >
+          <button type="submit" class="submit-btn">Join the Circle</button>
+        </form>
+        <div class="success-message" id="successMessage">
+          Welcome to the Circle!. You're on the list 
         </div>
-    </section>
-
-    <section class="products" id="products">
-        <div class="products-container">
-            <!-- Product Card 1: Simplified (No Image) --><div class="product-card" style="background: #212C65;">
-              <h3 class="product-name" style="color: #F5F2EB;">THE APEX POLO</h3>
-              <p class="product-tagline" style="color: #F5F2EB;">Coming Soon</p>
-            </div>
-            <!-- Product Card 2: Simplified (No Image) --><div class="product-card" style="background: #212C65;">
-              <h3 class="product-name" style="color: #F5F2EB;">THE ORGIN CAP</h3>
-              <p class="product-tagline" style="color: #F5F2EB;">Coming Soon</p>
-            </div>
-            <!-- Add more mock products as needed --></div>
-    </section>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">
-              <img 
-                  src="logo.png" 
-                  alt="Circle 71 Logo Mark"
-                  onerror="this.src='https://placehold.co/50x50/1a1a1a/F5F2EB?text=71&font=helvetica';"
-              >
-            </div>
-            <p class="tagline" style="font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; margin-top: 0; margin-bottom: 0;">Play Pure</p>
-            <div class="social-links">
-                <!-- TikTok SVG --><a href="https://www.tiktok.com/@Circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                    </svg>
-                </a>
-                <!-- X (Twitter) SVG --><a href="https://twitter.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                </a>
-                <!-- YouTube SVG --><a href="https://www.youtube.com/@circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                </a>
-                <!-- Instagram SVG --><a href="https://www.instagram.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-            </div>
-            <p class="copyright">© 2025 Circle 71. All rights reserved.</p>
+        <div class="error-message" id="errorMessage">
+          An error occurred. Please try again.
         </div>
-    </footer>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        // --- FIREBASE INITIALIZATION AND AUTHENTICATION ---
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-circle71-app-id';
-        const firebaseConfig = {
-          apiKey: "AIzaSyAyRDFas9B8YLAx2XawHWHZvgf2oSezGIA",
-          authDomain: "circle71-3855a.firebaseapp.com",
-          projectId: "circle71-3855a",
-          storageBucket: "circle71-3855a.firebasestorage.app",
-          messagingSenderId: "701220808447",
-          appId: "1:701220808447:web:ea7e03d13edbc19cee8eca",
-          measurementId: "G-2FXN8GF6JZ"
-        };
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-        let db;
-        let auth;
-        let userId = null;
-        let isAuthReady = false;
-        
-        // Log level for debugging Firestore operations
-        setLogLevel('Debug'); 
-
-        // Async setup function
-        const setupFirebase = async () => {
-            try {
-                const app = initializeApp(firebaseConfig);
-                auth = getAuth(app);
-                db = getFirestore(app);
-
-                if (initialAuthToken) {
-                    await signInWithCustomToken(auth, initialAuthToken);
-                } else {
-                    await signInAnonymously(auth);
-                }
-                
-                userId = auth.currentUser?.uid;
-                isAuthReady = true;
-                console.log('Firebase initialized. User ID:', userId);
-
-            } catch (error) {
-                console.error("Error setting up Firebase or authentication:", error);
-                // If authentication fails, use a fallback ID but data won't persist to Firestore
-                userId = crypto.randomUUID();
-                isAuthReady = true; 
-            }
-        };
-
-        // Run setup immediately
-        setupFirebase();
-
-
-        // --- FORM HANDLING LOGIC ---
-        const form = document.getElementById('emailForm');
-        const emailInput = document.getElementById('emailInput');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Hide previous messages
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-
-            if (!isAuthReady || !db) {
-                console.error("Firebase is not ready. Cannot submit data.");
-                errorMessage.textContent = "Database service temporarily unavailable.";
-                errorMessage.style.display = 'block';
-                return;
-            }
-
-            const email = emailInput.value;
-            // Note: The userId might be the signed-in user's UID or a randomly generated UUID if anonymous sign-in failed.
-            const currentUserId = auth.currentUser?.uid || userId;
-            const SUB_COLLECTION_PATH = 'emails';
-
-
-            try {
-                // Prepare the document data
-                const subscriptionData = {
-                    email: email,
-                    timestamp: new Date().toISOString(),
-                    source: 'Circle71 Hero Section'
-                };
-
-                // Add document to Firestore
-                const docRef = await addDoc(collection(db, SUB_COLLECTION_PATH), subscriptionData);
-
-                // Replace the form with the success message (show submitted email)
-                successMessage.textContent = `Welcome to Circle 71. Your access has been reserved — ${email}`;
-                form.replaceWith(successMessage);
-                successMessage.style.display = 'block';
-
-                console.log('Email successfully subscribed and saved to Firestore. Document ID:', docRef.id);
-                console.log('Saved to path:', SUB_COLLECTION_PATH);
-            
-            } catch (error) {
-                console.error("Error writing document to Firestore:", error);
-                errorMessage.textContent = "Subscription failed due to a server error. Please try again.";
-                errorMessage.style.display = 'block';
-            }
-        });
+      </div>
+    </div>
+    <script>
+    // Ensure spacing between logo-mark and logo text is always the height of the logo text box
+    window.addEventListener('DOMContentLoaded', function() {
+      var logo = document.getElementById('circle71Logo');
+      if (logo) {
+        var logoHeight = logo.offsetHeight;
+        logo.style.marginTop = logoHeight + 'px';
+      }
+    });
     </script>
+  </section>
+
+  <section class="brand-statement">
+    <div class="statement-container">
+    <p class="statement-text">Circle 71 was founded on a belief that true performance is quiet, intentional, and enduring. Each piece reflects the precision of modern engineering and the calm of mountain air — a new standard of refined performance.</p>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="products-container">
+    <!-- Product Card 1: With Background Image -->
+    <div class="product-card" style="background: url('hero_background.png') center/cover no-repeat;">
+      <h3 class="product-name" style="color: #F5F2EB;">THE APEX POLO</h3>
+      <p class="product-tagline" style="color: #F5F2EB;">Coming Soon</p>
+    </div>
+    <!-- Product Card 2: With Background Image -->
+    <div class="product-card" style="background: url('hero_background.png') center/cover no-repeat;">
+      <h3 class="product-name" style="color: #F5F2EB;">THE ORGIN HAT</h3>
+      <p class="product-tagline" style="color: #F5F2EB;">Coming Soon</p>
+    </div>
+    </div>
+    <!-- Add more mock products as needed --></div>
+  </section>
+
+  <footer>
+    <style>
+      /* Footer spacing variables */
+      :root {
+        /* Switch between absolute (px) and relative (%) units by commenting/uncommenting */
+        
+        /* Absolute units */
+        
+        --footer-container-gap: 15px;
+        --logo-bottom-margin: 5px;
+        --tagline-vertical-margin: 5px;
+        --social-links-margin: 10px;
+        --copyright-top-margin: 5px;
+      
+        /* Relative units */
+        /*
+        --footer-container-gap: 1%;
+        --logo-bottom-margin: 1%;
+        --tagline-vertical-margin: 3%;
+        --social-links-margin: 3%;
+        --copyright-top-margin: 0.5%;
+        */
+      }
+    </style>
+    <div class="footer-container" style="gap: var(--footer-container-gap);">
+      <div class="footer-logo" style="margin-bottom: var(--logo-bottom-margin);">
+        <img 
+          src="logo.png" 
+          alt="Circle 71 Logo Mark"
+          onerror="this.src='https://placehold.co/50x50/1a1a1a/F5F2EB?text=71&font=helvetica';"
+        >
+      </div>
+      <p class="tagline" style="font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: var(--tagline-vertical-margin) 0;">Play Pure. Never Lay Up.</p>
+      <div class="social-links" style="margin: var(--social-links-margin) 0;">
+        <a href="https://www.tiktok.com/@Circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+          </svg>
+        </a>
+        <a href="https://twitter.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="copyright" style="margin-top: var(--copyright-top-margin); font-size: 0.8rem;">© 2025 CIRCLE 71 LLC. All rights reserved.</p>
+    </div>
+  </footer></svg>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // --- FIREBASE INITIALIZATION AND AUTHENTICATION ---
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-circle71-app-id';
+    const firebaseConfig = {
+      apiKey: "AIzaSyAyRDFas9B8YLAx2XawHWHZvgf2oSezGIA",
+      authDomain: "circle71-3855a.firebaseapp.com",
+      projectId: "circle71-3855a",
+      storageBucket: "circle71-3855a.firebasestorage.app",
+      messagingSenderId: "701220808447",
+      appId: "1:701220808447:web:ea7e03d13edbc19cee8eca",
+      measurementId: "G-2FXN8GF6JZ"
+    };
+    const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+    let db;
+    let auth;
+    let userId = null;
+    let isAuthReady = false;
+    
+    // Log level for debugging Firestore operations
+    setLogLevel('Debug'); 
+
+    // Async setup function
+    const setupFirebase = async () => {
+      try {
+        const app = initializeApp(firebaseConfig);
+        auth = getAuth(app);
+        db = getFirestore(app);
+
+        if (initialAuthToken) {
+          await signInWithCustomToken(auth, initialAuthToken);
+        } else {
+          await signInAnonymously(auth);
+        }
+        
+        userId = auth.currentUser?.uid;
+        isAuthReady = true;
+        console.log('Firebase initialized. User ID:', userId);
+
+      } catch (error) {
+        console.error("Error setting up Firebase or authentication:", error);
+        // If authentication fails, use a fallback ID but data won't persist to Firestore
+        userId = crypto.randomUUID();
+        isAuthReady = true; 
+      }
+    };
+
+    // Run setup immediately
+    setupFirebase();
+
+
+    // --- FORM HANDLING LOGIC ---
+    const form = document.getElementById('emailForm');
+    const emailInput = document.getElementById('emailInput');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Hide previous messages
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+
+      if (!isAuthReady || !db) {
+        console.error("Firebase is not ready. Cannot submit data.");
+        errorMessage.textContent = "Database service temporarily unavailable.";
+        errorMessage.style.display = 'block';
+        return;
+      }
+
+      const email = emailInput.value;
+      // Note: The userId might be the signed-in user's UID or a randomly generated UUID if anonymous sign-in failed.
+      const currentUserId = auth.currentUser?.uid || userId;
+      const SUB_COLLECTION_PATH = 'emails';
+
+
+      try {
+        // Prepare the document data
+        const subscriptionData = {
+          email: email,
+          timestamp: new Date().toISOString(),
+          source: 'Circle71 Hero Section'
+        };
+
+        // Add document to Firestore
+        const docRef = await addDoc(collection(db, SUB_COLLECTION_PATH), subscriptionData);
+
+        // Replace the form with the success message (show submitted email)
+        successMessage.textContent = `Welcome to Circle 71. Your access has been reserved — ${email}`;
+        form.replaceWith(successMessage);
+        successMessage.style.display = 'block';
+
+        console.log('Email successfully subscribed and saved to Firestore. Document ID:', docRef.id);
+        console.log('Saved to path:', SUB_COLLECTION_PATH);
+      
+      } catch (error) {
+        console.error("Error writing document to Firestore:", error);
+        errorMessage.textContent = "Subscription failed due to a server error. Please try again.";
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
