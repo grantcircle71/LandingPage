@@ -1,570 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circle71 - Refined Performance</title>
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle71 - Refined Performance</title>
+  <style>
+    /* General Styles */
+    :root {
+      /* Color variables (centralized) */
+      --color-dark: #222F4E;
+      --color-cream: #F5F2EB;
+      --color-white: #ffffff;
+      --color-muted: #fafafa;
+      --color-subtle: #999999;
+      --color-error: #ff6b6b;
+      --color-footer: #366E4E;
+    }
 
-        body {
-            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #212C65;
-            overflow-x: hidden;
-            background: #F5F2EB;
-        }
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* Use hero_background.png as background image, cover and crop responsively.
-               Anchor to the left so the left side of the image is always exposed while
-               cropping happens on the right as the viewport gets smaller. */
-            background: #212C65 url('hero_background.png') left center / cover no-repeat;
-            overflow: hidden;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Ensure hero tagline is centered and constrained for better line-wrapping */
-        .hero .tagline {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 20px;
-            display: block;
-            line-height: 1.4;
-            font-family: 'Urbanist', sans-serif;
-        }
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--color-dark);
+      overflow-x: hidden;
+      background: var(--color-cream);
+    }
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Use hero_background.png as background image, cover and crop responsively.
+         Anchor to the left so the left side of the image is always exposed while
+         cropping happens on the right as the viewport gets smaller. */
+      background: var(--color-dark) url('hero_background.png') left center / cover no-repeat;
+      overflow: hidden;
+    }
 
-        .hero-content {
-            text-align: center;
-            z-index: 5; /* Content must be on top of the SVG */
-            max-width: 900px;
-            padding: 0 40px;
-            animation: fadeInUp 1.4s ease-out;
-        }
+    /* Ensure hero tagline is centered and constrained for better line-wrapping */
+    .hero .tagline {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      display: block;
+      line-height: 1.4;
+      font-family: 'Urbanist', sans-serif;
+    }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .hero-content {
+      text-align: center;
+      z-index: 5; /* Content must be on top of the SVG */
+      max-width: 900px;
+      padding: 0 40px;
+      animation: fadeInUp 1.4s ease-out;
+    }
 
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-        }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .logo-mark {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 25px;
-            position: relative;
-        }
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
 
-        .logo-mark img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+    .logo-mark {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 25px;
+      position: relative;
+    }
 
-        .logo {
-            font-size: 4.5rem;
-            font-weight: 500;
-            letter-spacing: 12px;
-            /* Logo color remains light for contrast on dark blue */
-            color: #F5F2EB; 
-        }
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
-        .tagline {
-            font-size: 1.8rem;
-            color: #F5F2EB;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
+    .logo {
+      font-size: 4.5rem;
+      font-weight: 500;
+      letter-spacing: 12px;
+      /* Logo color remains light for contrast on dark blue */
+      color: var(--color-cream); 
+    }
 
-        .subtext {
-            font-size: 1rem;
-            /* UPDATED: Changed from semi-transparent to solid #F5F2EB */
-            color: #F5F2EB;
-            font-weight: 400;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            line-height: 1.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .tagline {
+      font-size: 1.8rem;
+      color: var(--color-cream);
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
 
-        /* Brand Statement */
-        .brand-statement {
-            padding: 120px 40px;
-            background: #F5F2EB;
-            text-align: center;
-        }
+    .subtext {
+      font-size: 1rem;
+      /* UPDATED: Changed from semi-transparent to solid cream */
+      color: var(--color-cream);
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        .statement-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    /* Brand Statement */
+    .brand-statement {
+      padding: 120px 40px;
+      background: var(--color-cream);
+      text-align: center;
+    }
 
-        .statement-text {
-            font-size: 1.3rem;
-            line-height: 2;
-            font-weight: 300;
-            color: #212C65;
-            letter-spacing: 0.5px;
-        }
+    .statement-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        /* --- SVG Line Styles --- */
+    .statement-text {
+      font-size: 1.3rem;
+      line-height: 2;
+      font-weight: 300;
+      color: var(--color-dark);
+      letter-spacing: 0.5px;
+    }
 
-        /* Product Showcase */
-        .products {
-            padding: 100px 40px 120px;
-            background: #fff;
-        }
+    /* --- SVG Line Styles --- */
 
-        .products-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 80px;
-        }
+    /* Product Showcase */
+    .products {
+      padding: 100px 40px 120px;
+      background: var(--color-white);
+    }
 
-        /* Adjusted product-card for simplified, text-only view */
-        .product-card {
-            text-align: center;
-            padding: 40px 40px 30px; 
-            background: #fafafa;
-            transition: all 0.4s ease;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
+    .products-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 80px;
+    }
 
-        .product-name {
-            font-size: 1.8rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            color: #212C65;
-            margin-bottom: 15px;
-        }
+    /* Adjusted product-card for simplified, text-only view */
+    .product-card {
+      text-align: center;
+      padding: 40px 40px 30px; 
+      background: var(--color-muted);
+      transition: all 0.4s ease;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-        .product-tagline {
-            font-size: 0.85rem;
-            color: #999;
-            letter-spacing: 2px;
-            margin-bottom: 0;
-            font-weight: 400;
-            text-transform: uppercase;
-        }
+    .product-name {
+      font-size: 1.8rem;
+      font-weight: 300;
+      letter-spacing: 4px;
+      color: var(--color-dark);
+      margin-bottom: 15px;
+    }
 
-        /* Email Form Styles - Adapted for Hero Section */
+    .product-tagline {
+      font-size: 0.85rem;
+      color: var(--color-subtle);
+      letter-spacing: 2px;
+      margin-bottom: 0;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
 
-        .hero-email-wrapper {
-            margin-top: 30px;
-            color: #F5F2EB;
-        }
+    /* Email Form Styles - Adapted for Hero Section */
 
-        .email-form {
-            display: flex;
-            gap: 15px;
-            max-width: 550px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    .hero-email-wrapper {
+      margin-top: 30px;
+      color: var(--color-cream);
+    }
 
-        .email-input {
-            flex: 1;
-            min-width: 280px;
-            padding: 18px 24px;
-            /* UPDATED: Border color now matches the submit button */
-            border: 1px solid #F5F2EB;
-            background: transparent;
-            color: #F5F2EB;
-            font-size: 0.95rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-        }
+    .email-form {
+      display: flex;
+      gap: 15px;
+      max-width: 550px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-        .submit-btn {
-            padding: 18px 40px;
-            background: transparent;
-            color: #F5F2EB;
-            border: 1px solid #F5F2EB;
-            font-size: 0.85rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            border-radius: 4px;
-        }
+    .email-input {
+      flex: 1;
+      min-width: 280px;
+      padding: 18px 24px;
+      /* UPDATED: Border color now matches the submit button */
+      border: 1px solid var(--color-cream);
+      background: transparent;
+      color: var(--color-cream);
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
 
-        .submit-btn:hover {
-            background: #F5F2EB;
-            color: #212C65;
-        }
+    .submit-btn {
+      padding: 18px 40px;
+      background: transparent;
+      color: var(--color-cream);
+      border: 1px solid var(--color-cream);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
 
-        .success-message, .error-message {
-            display: none;
-            color: #F5F2EB;
-            margin-top: 25px;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            animation: fadeInUp 0.5s ease-out;
-        }
+    .submit-btn:hover {
+      background: var(--color-cream);
+      color: var(--color-dark);
+    }
 
-        .error-message {
-             color: #ff6b6b;
-        }
+    .success-message, .error-message {
+      display: none;
+      color: var(--color-cream);
+      margin-top: 25px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      animation: fadeInUp 0.5s ease-out;
+    }
 
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            padding: 80px 40px 50px;
-            color: #F5F2EB;
-        }
+    .error-message {
+       color: var(--color-error);
+    }
 
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-        
-        /* NEW STYLES: Social Link Alignment */
-        .social-links {
-            display: flex;
-            gap: 20px;
-            margin-top: 10px;
-        }
+    /* Footer */
+    footer {
+      background: var(--color-footer);
+      padding: 80px 40px 50px;
+      color: var(--color-cream);
+    }
 
-        .social-link {
-            display: block;
-            width: 24px;
-            height: 24px;
-            color: #F5F2EB;
-            opacity: 0.7;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    /* NEW STYLES: Social Link Alignment */
+    .social-links {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+    }
 
-        .social-link:hover {
-            opacity: 1;
-            transform: scale(1.1);
-        }
+    .social-link {
+      display: block;
+      width: 24px;
+      height: 24px;
+      color: var(--color-cream);
+      opacity: 0.7;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-        .social-link svg {
-            width: 100%;
-            height: 100%;
-            fill: currentColor;
-        }
-        /* END NEW STYLES */
+    .social-link:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
 
-        .footer-logo {
-            margin-bottom: 0px; /* change this value to increase/decrease spacing */
-        }
-        
-        /* NEW: Image styling for the footer logo */
-        .footer-logo img {
-            height: 100px; /* Adjust size for footer */
-            width: auto;
-            opacity: 0.7; /* Faded effect to match original text style */
-            transition: opacity 0.3s ease;
-        }
+    .social-link svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+    /* END NEW STYLES */
 
-        .footer-logo img:hover {
-            opacity: 1;
-        }
+    .footer-logo {
+      margin-bottom: 0px; /* change this value to increase/decrease spacing */
+    }
+    
+    /* NEW: Image styling for the footer logo */
+    .footer-logo img {
+      height: 100px; /* Adjust size for footer */
+      width: auto;
+      opacity: 0.7; /* Faded effect to match original text style */
+      transition: opacity 0.3s ease;
+    }
 
-        /* MOBILE/TABLET STYLES: Forces stacking on narrower screens */
-        @media (max-width: 968px) {
-            .products-container {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-        }
+    .footer-logo img:hover {
+      opacity: 1;
+    }
 
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 3rem;
-                letter-spacing: 8px;
-            }
+    /* MOBILE/TABLET STYLES: Forces stacking on narrower screens */
+    @media (max-width: 968px) {
+      .products-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+    }
 
-            .logo-mark {
-                width: 90px;
-                height: 90px;
-                margin-bottom: 20px;
-            }
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 3rem;
+        letter-spacing: 8px;
+      }
 
-            .tagline {
-                font-size: 1.3rem;
-                letter-spacing: 2px;
-            }
+      .logo-mark {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+      }
 
-            .email-form {
-                flex-direction: column;
-            }
-        }
-    </style>
+      .tagline {
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+      }
+
+      .email-form {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
   <section class="hero">
-    <div class="hero-content">
-      <div class="logo-container">
-        <div class="logo-mark">
-          <img 
-            src="logo.png" 
-            alt="Circle 71 Logo Mark"
-            style="position:absolute; top:30%; left:50%; transform:translate(-50%,-50%); width:35vw; height:auto; max-width:420px; min-width:90px; display:block;"
-            onerror="this.src='https://placehold.co/120x120/212C65/F5F2EB?text=71&font=helvetica';"
-          />
-        </div>
-        <h1 class="logo" 
-          id="circle71Logo"
-          style="font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-          CIRCLE 71
-        </h1>
-      </div>
-      <p class="tagline" style="font-size: 1.62rem;">Born in Jackson Hole, refined performance apparel — for those who never lay-up.</p>
-      <div class="hero-email-wrapper">
-        <form class="email-form" id="emailForm">
-          <input 
-            type="email" 
-            class="email-input" 
-            placeholder="Your email address" 
-            required
-            id="emailInput"
-          >
-          <button type="submit" class="submit-btn">Join the Circle</button>
-        </form>
-        <div class="success-message" id="successMessage">
-          Welcome to the Circle!. You're on the list 
-        </div>
-        <div class="error-message" id="errorMessage">
-          An error occurred. Please try again.
-        </div>
-      </div>
+  <div class="hero-content">
+    <div class="logo-container">
+    <div class="logo-mark">
+      <img 
+      src="logo.png" 
+      alt="Circle 71 Logo Mark"
+      style="position:absolute; top:30%; left:50%; transform:translate(-50%,-50%); width:35vw; height:auto; max-width:420px; min-width:90px; display:block;"
+      onerror="this.src='https://placehold.co/120x120/212C65/F5F2EB?text=71&font=helvetica';"
+      />
     </div>
-    <script>
-    // Ensure spacing between logo-mark and logo text is always the height of the logo text box
-    window.addEventListener('DOMContentLoaded', function() {
-      var logo = document.getElementById('circle71Logo');
-      if (logo) {
-        var logoHeight = logo.offsetHeight;
-        logo.style.marginTop = logoHeight + 'px';
-      }
-    });
-    </script>
+    <h1 class="logo" 
+      id="circle71Logo"
+      style="font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+      CIRCLE 71
+    </h1>
+    </div>
+    <p class="tagline" style="font-size: 1.62rem;">Born in Jackson Hole, refined performance apparel — for those who never lay-up.</p>
+    <div class="hero-email-wrapper">
+    <form class="email-form" id="emailForm">
+      <input 
+      type="email" 
+      class="email-input" 
+      placeholder="Your email address" 
+      required
+      id="emailInput"
+      >
+      <button type="submit" class="submit-btn">Join the Circle</button>
+    </form>
+    <div class="success-message" id="successMessage">
+      Welcome to the Circle!. You're on the list 
+    </div>
+    <div class="error-message" id="errorMessage">
+      An error occurred. Please try again.
+    </div>
+    </div>
+  </div>
+  <script>
+  // Ensure spacing between logo-mark and logo text is always the height of the logo text box
+  window.addEventListener('DOMContentLoaded', function() {
+    var logo = document.getElementById('circle71Logo');
+    if (logo) {
+    var logoHeight = logo.offsetHeight;
+    logo.style.marginTop = logoHeight + 'px';
+    }
+  });
+  </script>
   </section>
 
   <section class="brand-statement">
-    <div class="statement-container">
-    <p class="statement-text">Circle 71 was founded on a belief that true performance is quiet, intentional, and enduring. Each piece reflects the precision of modern engineering and the calm of mountain air — a new standard of refined performance.</p>
-    </div>
+  <div class="statement-container">
+  <p class="statement-text">Circle 71 was founded on a belief that true performance is quiet, intentional, and enduring. Each piece reflects the precision of modern engineering and the calm of mountain air — a new standard of refined performance.</p>
+  </div>
   </section>
 
   <section class="products" id="products">
-    <div class="products-container">
-    <!-- Product Card 1: With Background Image -->
-    <div class="product-card" style="background: url('hero_background.png') center/cover no-repeat;">
-      <h3 class="product-name" style="color: #F5F2EB;">THE APEX POLO</h3>
-      <p class="product-tagline" style="color: #F5F2EB;">Coming Soon</p>
-    </div>
-    <!-- Product Card 2: With Background Image -->
-    <div class="product-card" style="background: url('hero_background.png') center/cover no-repeat;">
-      <h3 class="product-name" style="color: #F5F2EB;">THE ORGIN HAT</h3>
-      <p class="product-tagline" style="color: #F5F2EB;">Coming Soon</p>
-    </div>
-    </div>
-    <!-- Add more mock products as needed --></div>
+  <div class="products-container">
+  <!-- Product Card 1: With Background Image -->
+  <div class="product-card" style="background: url('hero_background.png') center/cover no-repeat;">
+    <h3 class="product-name" style="color: var(--color-cream);">THE APEX POLO</h3>
+    <p class="product-tagline" style="color: var(--color-cream);">Coming Soon</p>
+  </div>
+  <!-- Product Card 2: With Background Image -->
+  <div class="product-card" style="background: url('hero_background.png') center/cover no-repeat;">
+    <h3 class="product-name" style="color: var(--color-cream);">THE ORGIN HAT</h3>
+    <p class="product-tagline" style="color: var(--color-cream);">Coming Soon</p>
+  </div>
+  </div>
+  <!-- Add more mock products as needed --></div>
   </section>
 
   <footer>
-    <style>
-      /* Footer spacing variables */
-      :root {
-        /* Switch between absolute (px) and relative (%) units by commenting/uncommenting */
-        
-        /* Absolute units */
-        
-        --footer-container-gap: 15px;
-        --logo-bottom-margin: 5px;
-        --tagline-vertical-margin: 5px;
-        --social-links-margin: 10px;
-        --copyright-top-margin: 5px;
-      
-        /* Relative units */
-        /*
-        --footer-container-gap: 1%;
-        --logo-bottom-margin: 1%;
-        --tagline-vertical-margin: 3%;
-        --social-links-margin: 3%;
-        --copyright-top-margin: 0.5%;
-        */
-      }
-    </style>
-    <div class="footer-container" style="gap: var(--footer-container-gap);">
-      <div class="footer-logo" style="margin-bottom: var(--logo-bottom-margin);">
-        <img 
-          src="Circle71_Logo_Horizontal_Cream.png" 
-          alt="Circle 71 Logo Mark"
-          onerror="this.src='https://placehold.co/50x50/1a1a1a/F5F2EB?text=71&font=helvetica';"
-        >
-      </div>
-      <p class="tagline" style="font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: var(--tagline-vertical-margin) 0;">Play Pure. Never Lay Up.</p>
-      <div class="social-links" style="margin: var(--social-links-margin) 0;">
-        <a href="https://www.tiktok.com/@Circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-          </svg>
-        </a>
-        <a href="https://twitter.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-          </svg>
-        </a>
-        <a href="https://www.youtube.com/@circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </a>
-      </div>
-      <p class="copyright" style="margin-top: var(--copyright-top-margin); font-size: 0.8rem;">© 2025 CIRCLE 71 LLC. All rights reserved.</p>
+  <style>
+    /* Footer spacing variables */
+    :root {
+    /* Switch between absolute (px) and relative (%) units by commenting/uncommenting */
+    
+    /* Absolute units */
+    
+    --footer-container-gap: 15px;
+    --logo-bottom-margin: 5px;
+    --tagline-vertical-margin: 5px;
+    --social-links-margin: 10px;
+    --copyright-top-margin: 5px;
+    
+    /* Relative units */
+    /*
+    --footer-container-gap: 1%;
+    --logo-bottom-margin: 1%;
+    --tagline-vertical-margin: 3%;
+    --social-links-margin: 3%;
+    --copyright-top-margin: 0.5%;
+    */
+    }
+  </style>
+  <div class="footer-container" style="gap: var(--footer-container-gap);">
+    <div class="footer-logo" style="margin-bottom: var(--logo-bottom-margin);">
+    <img 
+      src="Circle71_Logo_Horizontal_Cream.png" 
+      alt="Circle 71 Logo Mark"
+      onerror="this.src='https://placehold.co/50x50/1a1a1a/F5F2EB?text=71&font=helvetica';"
+    >
     </div>
+    <p class="tagline" style="font-family: 'Fahkwang', 'TS Maka Regular', Optima, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: var(--tagline-vertical-margin) 0;">Play Pure. Never Lay Up.</p>
+    <div class="social-links" style="margin: var(--social-links-margin) 0;">
+    <a href="https://www.tiktok.com/@Circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+      </svg>
+    </a>
+    <a href="https://twitter.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+    <a href="https://www.youtube.com/@circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg>
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg>
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </a>
+    </div>
+    <p class="copyright" style="margin-top: var(--copyright-top-margin); font-size: 0.8rem;">© 2025 CIRCLE 71 LLC. All rights reserved.</p>
+  </div>
   </footer></svg>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAuth, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-    import { getFirestore, collection, addDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+  import { getAuth, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+  import { getFirestore, collection, addDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-    // --- FIREBASE INITIALIZATION AND AUTHENTICATION ---
-    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-circle71-app-id';
-    const firebaseConfig = {
-      apiKey: "AIzaSyAyRDFas9B8YLAx2XawHWHZvgf2oSezGIA",
-      authDomain: "circle71-3855a.firebaseapp.com",
-      projectId: "circle71-3855a",
-      storageBucket: "circle71-3855a.firebasestorage.app",
-      messagingSenderId: "701220808447",
-      appId: "1:701220808447:web:ea7e03d13edbc19cee8eca",
-      measurementId: "G-2FXN8GF6JZ"
-    };
-    const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+  // --- FIREBASE INITIALIZATION AND AUTHENTICATION ---
+  const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-circle71-app-id';
+  const firebaseConfig = {
+    apiKey: "AIzaSyAyRDFas9B8YLAx2XawHWHZvgf2oSezGIA",
+    authDomain: "circle71-3855a.firebaseapp.com",
+    projectId: "circle71-3855a",
+    storageBucket: "circle71-3855a.firebasestorage.app",
+    messagingSenderId: "701220808447",
+    appId: "1:701220808447:web:ea7e03d13edbc19cee8eca",
+    measurementId: "G-2FXN8GF6JZ"
+  };
+  const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
-    let db;
-    let auth;
-    let userId = null;
-    let isAuthReady = false;
+  let db;
+  let auth;
+  let userId = null;
+  let isAuthReady = false;
+  
+  // Log level for debugging Firestore operations
+  setLogLevel('Debug'); 
+
+  // Async setup function
+  const setupFirebase = async () => {
+    try {
+    const app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+
+    if (initialAuthToken) {
+      await signInWithCustomToken(auth, initialAuthToken);
+    } else {
+      await signInAnonymously(auth);
+    }
     
-    // Log level for debugging Firestore operations
-    setLogLevel('Debug'); 
+    userId = auth.currentUser?.uid;
+    isAuthReady = true;
+    console.log('Firebase initialized. User ID:', userId);
 
-    // Async setup function
-    const setupFirebase = async () => {
-      try {
-        const app = initializeApp(firebaseConfig);
-        auth = getAuth(app);
-        db = getFirestore(app);
+    } catch (error) {
+    console.error("Error setting up Firebase or authentication:", error);
+    // If authentication fails, use a fallback ID but data won't persist to Firestore
+    userId = crypto.randomUUID();
+    isAuthReady = true; 
+    }
+  };
 
-        if (initialAuthToken) {
-          await signInWithCustomToken(auth, initialAuthToken);
-        } else {
-          await signInAnonymously(auth);
-        }
-        
-        userId = auth.currentUser?.uid;
-        isAuthReady = true;
-        console.log('Firebase initialized. User ID:', userId);
+  // Run setup immediately
+  setupFirebase();
 
-      } catch (error) {
-        console.error("Error setting up Firebase or authentication:", error);
-        // If authentication fails, use a fallback ID but data won't persist to Firestore
-        userId = crypto.randomUUID();
-        isAuthReady = true; 
-      }
+
+  // --- FORM HANDLING LOGIC ---
+  const form = document.getElementById('emailForm');
+  const emailInput = document.getElementById('emailInput');
+  const successMessage = document.getElementById('successMessage');
+  const errorMessage = document.getElementById('errorMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Hide previous messages
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+
+    if (!isAuthReady || !db) {
+    console.error("Firebase is not ready. Cannot submit data.");
+    errorMessage.textContent = "Database service temporarily unavailable.";
+    errorMessage.style.display = 'block';
+    return;
+    }
+
+    const email = emailInput.value;
+    // Note: The userId might be the signed-in user's UID or a randomly generated UUID if anonymous sign-in failed.
+    const currentUserId = auth.currentUser?.uid || userId;
+    const SUB_COLLECTION_PATH = 'emails';
+
+
+    try {
+    // Prepare the document data
+    const subscriptionData = {
+      email: email,
+      timestamp: new Date().toISOString(),
+      source: 'Circle71 Hero Section'
     };
 
-    // Run setup immediately
-    setupFirebase();
+    // Add document to Firestore
+    const docRef = await addDoc(collection(db, SUB_COLLECTION_PATH), subscriptionData);
 
+    // Replace the form with the success message (show submitted email)
+    successMessage.textContent = `Welcome to Circle 71. Your access has been reserved — ${email}`;
+    form.replaceWith(successMessage);
+    successMessage.style.display = 'block';
 
-    // --- FORM HANDLING LOGIC ---
-    const form = document.getElementById('emailForm');
-    const emailInput = document.getElementById('emailInput');
-    const successMessage = document.getElementById('successMessage');
-    const errorMessage = document.getElementById('errorMessage');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      // Hide previous messages
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-
-      if (!isAuthReady || !db) {
-        console.error("Firebase is not ready. Cannot submit data.");
-        errorMessage.textContent = "Database service temporarily unavailable.";
-        errorMessage.style.display = 'block';
-        return;
-      }
-
-      const email = emailInput.value;
-      // Note: The userId might be the signed-in user's UID or a randomly generated UUID if anonymous sign-in failed.
-      const currentUserId = auth.currentUser?.uid || userId;
-      const SUB_COLLECTION_PATH = 'emails';
-
-
-      try {
-        // Prepare the document data
-        const subscriptionData = {
-          email: email,
-          timestamp: new Date().toISOString(),
-          source: 'Circle71 Hero Section'
-        };
-
-        // Add document to Firestore
-        const docRef = await addDoc(collection(db, SUB_COLLECTION_PATH), subscriptionData);
-
-        // Replace the form with the success message (show submitted email)
-        successMessage.textContent = `Welcome to Circle 71. Your access has been reserved — ${email}`;
-        form.replaceWith(successMessage);
-        successMessage.style.display = 'block';
-
-        console.log('Email successfully subscribed and saved to Firestore. Document ID:', docRef.id);
-        console.log('Saved to path:', SUB_COLLECTION_PATH);
-      
-      } catch (error) {
-        console.error("Error writing document to Firestore:", error);
-        errorMessage.textContent = "Subscription failed due to a server error. Please try again.";
-        errorMessage.style.display = 'block';
-      }
-    });
+    console.log('Email successfully subscribed and saved to Firestore. Document ID:', docRef.id);
+    console.log('Saved to path:', SUB_COLLECTION_PATH);
+    
+    } catch (error) {
+    console.error("Error writing document to Firestore:", error);
+    errorMessage.textContent = "Subscription failed due to a server error. Please try again.";
+    errorMessage.style.display = 'block';
+    }
+  });
   </script>
 </body>
 </html>
