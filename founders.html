@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circle71 - Founders Story</title>
+  <style>
+    :root {
+      --color-dark: #222F4E;
+      --color-cream: #F5F2EB;
+      --color-white: #ffffff;
+      --color-muted: #fafafa;
+      --color-subtle: #999999;
+      --color-footer: #366E4E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--color-dark);
+      background: var(--color-cream);
+      overflow-x: hidden;
+    }
+
+    header {
+      background: var(--color-dark);
+      color: var(--color-cream);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-family: 'Fahkwang', 'Optima', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 6px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
+      font-weight: 300;
+      color: var(--color-cream);
+      opacity: 0.9;
+    }
+
+    .founders-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 80px;
+      padding: 100px 40px;
+      background: var(--color-cream);
+    }
+
+    .founders-image {
+      flex: 1 1 480px;
+      min-width: 320px;
+      max-width: 600px;
+      height: 600px;
+      background: url('founders.png') center center / cover no-repeat;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .founders-text {
+      flex: 1 1 480px;
+      max-width: 700px; /* Increased max-width for slightly wider text */
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .founders-text h2 {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      color: var(--color-dark);
+      text-align: center; /* Centered "The Beginning" */
+    }
+
+    .founders-text p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      font-weight: 300;
+      color: var(--color-dark);
+      margin-bottom: 20px;
+    }
+
+    /* Inline image for text wrap in founders section */
+    .founders-inline-img {
+      float: left;
+      width: 50%; /* Image is now 50% of the text width */
+      max-width: 40%; /* Retain max-width for responsiveness, but primary control is now width: 50% */
+      margin: 0 24px 18px 0;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+      object-fit: cover;
+      height: auto;
+    }
+
+    @media (max-width: 900px) {
+      .founders-inline-img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto; /* Centered on mobile */
+        width: 80%; /* Adjusted for better mobile display */
+        max-width: 600px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background: var(--color-footer);
+      color: var(--color-cream);
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      height: 70px;
+      opacity: 0.8;
+      margin-bottom: 14px;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-logo img:hover {
+      opacity: 1;
+    }
+
+    .footer-tagline {
+      font-family: 'Fahkwang', 'Optima', sans-serif;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .social-link {
+      width: 24px;
+      height: 24px;
+      color: var(--color-cream);
+      opacity: 0.8;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-2px);
+      opacity: 1;
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 900px) {
+      .founders-section {
+        flex-direction: column;
+        padding: 80px 24px;
+      }
+
+      .founders-text h2 {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>OUR STORY</h1>
+    <p>Where precision meets purpose — The Circle71 Journey</p>
+  </header>
+
+  <section class="founders-section">
+    <div class="founders-text">
+      <h2>The Beginning</h2>
+
+      <img src="founders.png" alt="Drew and Grant Smith" class="founders-inline-img">
+
+      <p>Drew and Grant Smith – a father and son united by design, discipline, and the love of the game.</p>
+
+      <p>For Drew Smith, golf began as a simple island pastime. After selling his cybersecurity company, InfoArmor, and settling in Kona during the pandemic, he and his wife decided to “finally check out the course” at their club. An inexpensive starter set led to what quickly became an obsession—now 75 to 100 rounds a year. For Drew, golf became more than a sport; it was connection, competition, strategy, and the joy of being outside. As he puts it, “Mark Twain may have called it a good walk spoiled—but I can’t get enough.”</p>
+
+      <p>Grant Smith took a different path—through the mountains, not the fairway. A mechanical engineer who designs body structures for Rivian, he’s an adventurer at heart: marathon runner, climber of Mt. Whitney and Half Dome, and explorer of the Sawtooths and Tetons. Adventurous yet methodical, Grant brings the same meticulous planning he uses in the backcountry to his engineering and product design work—where every detail matters.</p>
+
+      <p>Together, Drew and Grant founded Circle 71, born from their shared drive to build with purpose and perform with precision.</p>
+
+      <p>Drew channels decades of entrepreneurial leadership and creative curiosity into leading design and assembling a world-class team. He finds deep satisfaction in building tangible products after a career in software.</p>
+
+      <p>Grant applies his engineering discipline to material and product testing—challenging assumptions, minimizing waste, and creating apparel that’s not only fashionable but engineered for optimal use. His goal: clothing that looks great, feels and functions great, and lasts for years—so golfers, adventurers, and outdoorsmen can focus on their passion, not their gear.</p>
+
+      <p>For Grant, joining his father was a natural step: “After my dad started InfoArmor, I’ve been searching to start my own business—and there’s no better way to learn than alongside him.”</p>
+
+      <p>Their collaboration is built on a lifelong rhythm of teamwork. From Little League days—when Grant’s unhittable two-seam fastball helped his dad’s team to victory—to engineering performance wear that balances refinement and endurance, their projects have always shared one trait: a relentless pursuit of better.</p>
+
+      <p>Circle 71 bridges generations—a brand for the seasoned golfer and the young mountain climber alike. It’s where father and son meet at the intersection of craftsmanship and clarity—refined performance, elevated by the mountains.</p>
+    </div>
+  </section>
+
+  <footer>
+    <style>
+      :root {
+        --footer-logo-height: 70px;
+        --social-icon-size: 24px;
+        --footer-padding-top: 40px;
+        --footer-padding-bottom: 40px;
+        --footer-max-width: 1200px;
+        --footer-gap: 20px;
+        --tagline-social-gap: 16px;
+        --social-copyright-gap: 24px;
+      }
+
+      footer {
+        background: var(--color-footer);
+        color: var(--color-cream);
+        padding: var(--footer-padding-top) 40px var(--footer-padding-bottom);
+      }
+
+      .footer-container {
+        max-width: var(--footer-max-width);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--footer-gap);
+        text-align: center;
+      }
+
+      .footer-logo img {
+        height: var(--footer-logo-height);
+        width: auto;
+        opacity: 0.9;
+        transition: opacity 0.2s ease;
+      }
+      .footer-logo img:hover { opacity: 1; }
+
+      .footer-tagline {
+        margin: 0;
+        margin-top: var(--footer-logo-gap);
+        margin-bottom: var(--tagline-social-gap);
+        font-family: 'Fahkwang','TS Maka Regular', Optima, 'Inter', sans-serif;
+        color: var(--color-cream);
+        letter-spacing: 1px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+
+      .social-link {
+        display: inline-block;
+        width: var(--social-icon-size);
+        height: var(--social-icon-size);
+        color: var(--color-cream);
+        opacity: 0.85;
+        transition: opacity 0.22s ease, transform 0.18s ease;
+      }
+      .social-link:hover { opacity: 1; transform: translateY(-2px); }
+
+      .social-link svg { width: 100%; height: 100%; fill: currentColor; }
+
+      .copyright {
+        margin: 0;
+        margin-top: var(--social-copyright-gap);
+        font-size: 0.85rem;
+        color: var(--color-cream);
+      }
+
+      @media (max-width: 480px) {
+        :root { --footer-logo-height: 56px; --social-icon-size: 20px; --footer-gap: 14px; }
+        .footer-container { padding-left: 20px; padding-right: 20px; }
+      }
+    </style>
+
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img
+          src="Circle71_Logo_Horizontal_Cream.png"
+          alt="Circle 71 Logo"
+          onerror="this.src='https://placehold.co/200x50/1a1a1a/F5F2EB?text=CIRCLE71&font=helvetica';"
+        >
+      </div>
+
+      <p class="footer-tagline">Play Pure. Never Lay Up.</p>
+
+      <div class="social-links" aria-label="social links">
+        <a href="https://www.tiktok.com/@Circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+          </svg>
+        </a>
+        <!--
+
+        <a href="https://twitter.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" fill="currentColor">
+            <path d="M22.46 6c-.77.34-1.6.57-2.46.67a4.29 4.29 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.3 3.9A12.14 12.14 0 0 1 3.15 4.6a4.28 4.28 0 0 0 1.33 5.72 4.22 4.22 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.43 4.19 4.3 4.3 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98A8.59 8.59 0 0 1 2 19.54a12.12 12.12 0 0 0 6.57 1.93c7.89 0 12.21-6.54 12.21-12.21v-.56A8.7 8.7 0 0 0 22.46 6z"/>
+          </svg>
+        </a>
+        
+        <a href="https://www.youtube.com/@circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" fill="currentColor">
+            <path d="M23.5 6.18a3.01 3.01 0 0 0-2.12-2.14C19.51 3.55 12 3.55 12 3.55s-7.51 0-9.38.49A3.02 3.02 0 0 0 .5 6.18C0 8.07 0 12 0 12s0 3.93.5 5.82a3.02 3.02 0 0 0 2.12 2.14c1.87.51 9.38.51 9.38.51s7.51 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.82zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/>
+          </svg>
+        </a>
+        --><a href="https://www.instagram.com/circle71usa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" fill="currentColor">
+            <path d="M12 2.16c3.2 0 3.58.01 4.84.07 3.25.15 4.77 1.69 4.92 4.92.06 1.26.07 1.64.07 4.85s-.01 3.59-.07 4.85c-.15 3.23-1.67 4.77-4.92 4.92-1.26.06-1.64.07-4.84.07s-3.58-.01-4.84-.07c-3.25-.15-4.77-1.69-4.92-4.92C2.12 15.59 2.1 15.21 2.1 12s.02-3.59.07-4.85C2.32 3.92 3.84 2.37 7.09 2.22 8.35 2.16 8.73 2.16 12 2.16zm0-2.16C8.74 0 8.32.01 7.04.07 2.68.27.25 2.69.06 7.05.01 8.32 0 8.74 0 12s.01 3.68.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.32 23.99 8.74 24 12 24s3.68-.01 4.95-.07c4.36-.2 6.78-2.62 6.98-6.98.06-1.27.07-1.69.07-4.95s-.01-3.68-.07-4.95C23.73 2.69 21.31.27 16.95.07 15.68.01 15.26 0 12 0zM12 5.84a6.16 6.16 0 1 0 0 12.32A6.16 6.16 0 0 0 12 5.84zm0 10.16a3.99 3.99 0 1 1 0-7.98 3.99 3.99 0 0 1 0 7.98zm6.41-11.84a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="copyright">© 2025 CIRCLE 71 LLC. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
