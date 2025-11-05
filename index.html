@@ -407,8 +407,11 @@
     .copyright {
       margin: 0;
       margin-top: var(--social-copyright-gap);
-      font-size: 0.85rem;
+      font-size: 0.85rem; /* keep this if you want it smaller */
       color: var(--color-cream);
+      font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;; /* inherits from body */
+      font-weight: 400; /* optional: match body weight */
+      letter-spacing: 0; /* optional: match body letter spacing */
     }
 
     @media (max-width: 480px) {
@@ -723,7 +726,7 @@
         </a>
       </div>
 
-      <p class="copyright">© 2025 CIRCLE 71™ LLC. All rights reserved.</p>
+      <p class="copyright">© 2025 CIRCLE 71™. All rights reserved.</p>
     </div>
   </footer>
 
