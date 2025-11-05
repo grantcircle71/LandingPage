@@ -415,6 +415,25 @@
       :root { --footer-logo-height: 56px; --social-icon-size: 20px; --footer-gap: 14px; }
       .footer-container { padding-left: 20px; padding-right: 20px; }
     }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px; /* distance from bottom of hero */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      color: var(--color-cream);
+      opacity: 0.7;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(8px); }
+      60% { transform: translateX(-50%) translateY(4px); }
+    }
+
+    
   </style>
 </head>
 <body>
@@ -701,7 +720,7 @@
         </a>
       </div>
 
-      <p class="copyright">© 2025 CIRCLE 71 LLC. All rights reserved.</p>
+      <p class="copyright">© 2025 CIRCLE 71™ LLC. All rights reserved.</p>
     </div>
   </footer>
 
